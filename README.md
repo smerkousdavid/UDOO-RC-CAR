@@ -43,9 +43,12 @@ sudo apt-get install gstreamer1.0*
 
 g++
 
+
 sudo apt-get install g++
 
-xboxdrv
+
+XBOXDRV
+
 
 sudo add-apt-repository ppa:grumbel/ppa
 
@@ -61,5 +64,9 @@ sudo xboxdrv --silent
 or
 sudo xboxdrv --silent --detach-kernel-driver
 
+
+Other packages will be needed to install these packages
+
+By the way if you have a camera module look up on google motion, or how to install motion to simulate a ip camera
 
 
