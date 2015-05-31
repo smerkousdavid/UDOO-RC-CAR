@@ -18,7 +18,8 @@ sudo apt-get install python-pygame
 
 PYTHON 2.7
       Dependencies
-            sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+            
+sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
             
             Then download using the following command:
             
@@ -33,9 +34,32 @@ PYTHON 2.7
             ./configure
             make
             sudo make install
+            
   GSTREAMER
+  
   sudo add-apt-repository ppa:gstreamer-developers/ppa
 sudo apt-get update
 sudo apt-get install gstreamer1.0*
+
+g++
+
+sudo apt-get install g++
+
+xboxdrv
+
+sudo add-apt-repository ppa:grumbel/ppa
+
+sudo apt-get update && sudo apt-get install xboxdrv
+
+gksu gedit /etc/modprobe/blacklist.conf
+
+blacklist xpad
+
+sudo rmmod xpad
+
+sudo xboxdrv --silent
+or
+sudo xboxdrv --silent --detach-kernel-driver
+
 
 
