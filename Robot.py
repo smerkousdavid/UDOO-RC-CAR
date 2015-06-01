@@ -30,7 +30,10 @@ xboxCont = XboxController.XboxController(
 	scale = 1,
 	invertYAxis = True)
 xboxCont.start()
-while True:
-	myCallBack
-	sleep(0.015)
-xboxCont.stop()
+try:
+	while True:
+		myCallBack
+		sleep(0.015)
+catch KeyboardInterrupt:
+	xboxCont.stop()
+
