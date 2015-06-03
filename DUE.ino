@@ -6,21 +6,21 @@ int turnbrake = 8;
 int Speed = 3; //Set speed of motor value of 0 to 255 analog
 int Brake = 9; // Brake for motor usually unused so I always let sit 0
 void setup(){
-// This defines the speed of arduino serial
-Serial.begin(115200);
-// These set modes of pins
-pinMode(Direction, OUTPUT);
-pinMode(Speed, OUTPUT);
-pinMode(Brake, OUTPUT);
-pinMode(turnbrake, OUTPUT);
-pinMode(turnDir, OUTPUT);
-pinMode(turnpower, OUTPUT);
-// Ininitalizes pins. Not moving
-digitalWrite(turnDir, LOW);
-digitalWrite(turnbrake, LOW);
-digitalWrite(Brake, LOW);
-analogWrite(Speed, 0);
-analogWrite(turnpower, 0);
+	// This defines the speed of arduino serial
+	Serial.begin(115200);
+	// These set modes of pins
+	pinMode(Direction, OUTPUT);
+	pinMode(Speed, OUTPUT);
+	pinMode(Brake, OUTPUT);
+	pinMode(turnbrake, OUTPUT);
+	pinMode(turnDir, OUTPUT);
+	pinMode(turnpower, OUTPUT);
+	// Ininitalizes pins. Not moving
+	digitalWrite(turnDir, LOW);
+	digitalWrite(turnbrake, LOW);
+	digitalWrite(Brake, LOW);
+	analogWrite(Speed, 0);
+	analogWrite(turnpower, 0);
 // Wait for python script to start. Makes sure arudino doesn't overheat
 while(Serial.read() != '1'){
 	delay(100); 
