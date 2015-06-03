@@ -2,24 +2,24 @@ from time import sleep
 import XboxController
 import serial
 import pygame
-due = serial.Serial("/dev/ttymxc3", 115200)
-due.write('1')
+due = serial.Serial("/dev/ttymxc3", 115200) # Points at serial port and sets speed
+due.write('1') 
 def myCallBack(controlId, value):
-	if controlId == 1 and value > 0.3 and value < 0.5:
+	if controlId == 1 and 0.3 < value < 0.5:
 		due.write('1')
-	elif controlId == 1 and value >= 0.5 and value <0.7:
+	elif controlId == 1 and 0.5 <= value < 0.7:
 		due.write('2')
-	elif controlId == 1 and value <-0.3 and value >-0.5:
+	elif controlId == 1 and -0.5 < value < -0.3:
 		due.write('3')
-	elif controlId == 1 and value <=-0.5 and value >-0.7:
+	elif controlId == 1 and -0.7 <= value <-0.5:
 		due.write('4')
-	elif controlId == 1 and value <=-0.7:
+	elif controlId == 1 and value <= -0.7:
 		due.write('5')
-	elif controlId == 1 and value >=0.7:
+	elif controlId == 1 and 0.7 <= value:
 		due.write('6')
-	elif controlId == 0 and value > 0.3:
+	elif controlId == 0 and 0.3 < value:
 		due.write('7')
-	elif controlId == 0 and value <-0.3:
+	elif controlId == 0 and -0.3 < value:
 		due.write('8')
 	else :
 		due.write('0')
@@ -36,4 +36,3 @@ try:
 		sleep(0.015)
 catch KeyboardInterrupt:
 	xboxCont.stop()
-
