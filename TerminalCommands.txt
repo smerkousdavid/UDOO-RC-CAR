@@ -1,2 +1,6 @@
 sudo modprobe v4l2loopback video_nr=7 card_label="UDOO Camera Module"
 sudo gst-launch-0.10 mfw_v4lsrc ! ffmpegcolorspace ! v4l2sink device=/dev/video7
+
+sudo service motion start
+
+sudo xboxdrv --silent --detach-kernel-driver
